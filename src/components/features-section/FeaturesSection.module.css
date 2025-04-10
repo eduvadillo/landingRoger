@@ -1,0 +1,143 @@
+.featuresSection {
+  background-color: #000000; /* Fondo base */
+  padding: 5rem 0;
+  color: #ffffff;
+  overflow: hidden; /* Evitar scroll horizontal por imagenes posicionadas */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.mainTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 40px */
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.featureContent {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Espacio entre texto e imágenes */
+}
+
+.textBlock {
+  flex: 1;
+}
+
+.featureTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; /* Era 400 en Figma, aunque parezca titulo */
+  font-size: 1rem; /* 16px */
+  margin-bottom: 1rem;
+}
+
+.featureDescription {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.imagesBlock {
+  flex: 1.2; /* Darle un poco mas de espacio a las imagenes */
+  position: relative;
+  min-height: 400px; /* Altura estimada para contener las imagenes posicionadas */
+  /* background-color: #111; // Para visualizar el area */
+}
+
+.featureImage {
+  position: absolute;
+  max-width: 70%; /* Limitar tamaño relativo al contenedor */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.featureImage:hover {
+  transform: scale(1.05) rotate(-1deg);
+  z-index: 10; /* Traer al frente al hacer hover */
+}
+
+/* Posicionamiento aproximado basado en el Figma */
+.image1 {
+  /* Fires 1 */
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: rotate(-5deg);
+}
+
+.image2 {
+  /* Fires 2 */
+  top: 50px;
+  left: 25%;
+  z-index: 2;
+  transform: rotate(3deg);
+}
+
+.image3 {
+  /* Solicituds 1 */
+  top: 150px;
+  left: 10%;
+  z-index: 1;
+  transform: rotate(-2deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .featureContent {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  .imagesBlock {
+    min-height: 350px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .featureImage {
+    max-width: 60%;
+  }
+  .image1 {
+    left: 5%;
+  }
+  .image2 {
+    left: 35%;
+  }
+  .image3 {
+    top: 130px;
+    left: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 2rem;
+  }
+  .imagesBlock {
+    min-height: 300px;
+  }
+  .featureImage {
+    max-width: 70%;
+  }
+  .image1 {
+    left: 0;
+    top: 0;
+  }
+  .image2 {
+    left: 30%;
+    top: 40px;
+  }
+  .image3 {
+    top: 110px;
+    left: 15%;
+  }
+}
