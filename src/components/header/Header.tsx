@@ -7,9 +7,9 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <img src={fira} alt='Firal Logo' className={styles.logo} />
-        <nav>
+        {/* <nav>
           <button className={styles.loginLink}>Login</button>
-        </nav>
+        </nav> */}
       </div>
     </header>
   );
