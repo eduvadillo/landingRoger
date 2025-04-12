@@ -1,9 +1,16 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import backgroundImage from "../../assets/background.png";
-import dashboardImage from "../../assets/dashboard.png";
+import dashboardImage from "../../assets/dashboardLanding.webp";
 
 export const Hero: React.FC = () => {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.querySelector(".waitlistSection");
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.backgroundContainer}>
@@ -23,17 +30,21 @@ export const Hero: React.FC = () => {
           <p className={styles.subtitle}>
             Troba, inscriu-te i fes seguiment de totes les convocatòries en una sola plataforma
           </p>
-          <button className={styles.ctaButton}>Vull saber-ne més</button>
+          <button onClick={scrollToWaitlist} className={styles.ctaButton}>
+            Vull saber-ne més
+          </button>
         </div>
         <div className={styles.imageContainer}>
-          {/* Placeholder for the complex image group from Figma */}
-          {/* The actual implementation might involve absolute positioning */}
-          {/* and multiple layers as seen in the Figma structure (430:5550) */}
-          <img
-            src={dashboardImage}
-            alt='Firal Dashboard Preview'
-            className={styles.dashboardImage}
-          />
+          {/* Añadir un contenedor para la imagen y el overlay */}
+          <div className={styles.dashboardWrapper}>
+            <img
+              src={dashboardImage}
+              alt='Firal Dashboard Preview'
+              className={styles.dashboardImage}
+            />
+            {/* Overlay con degradado para la parte inferior */}
+            <div className={styles.dashboardOverlay}></div>
+          </div>
         </div>
       </div>
     </section>

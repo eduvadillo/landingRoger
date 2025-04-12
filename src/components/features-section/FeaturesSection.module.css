@@ -6,7 +6,6 @@
 }
 
 .container {
-  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -19,125 +18,71 @@
   margin-bottom: 4rem;
 }
 
-.featureContent {
-  display: flex;
-  align-items: center;
-  gap: 4rem; /* Espacio entre texto e imágenes */
+/* Grid layout for features */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.textBlock {
-  flex: 1;
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  /*   align-items: center; */
+  height: 390px;
 }
 
 .featureTitle {
   font-family: "Roboto", sans-serif;
-  font-weight: 400; /* Era 400 en Figma, aunque parezca titulo */
-  font-size: 1rem; /* 16px */
-  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: 1.5rem;
 }
 
-.featureDescription {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1rem; /* 16px */
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-}
-
-.imagesBlock {
-  flex: 1.2; /* Darle un poco mas de espacio a las imagenes */
-  position: relative;
-  min-height: 400px; /* Altura estimada para contener las imagenes posicionadas */
-  /* background-color: #111; // Para visualizar el area */
-}
-
-.featureImage {
-  position: absolute;
-  max-width: 70%; /* Limitar tamaño relativo al contenedor */
-  height: auto;
+.imageContainer {
+  width: 100%;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
-.featureImage:hover {
-  transform: scale(1.05) rotate(-1deg);
-  z-index: 10; /* Traer al frente al hacer hover */
+.imageContainer:hover {
+  transform: scale(1.03);
 }
 
-/* Posicionamiento aproximado basado en el Figma */
-.image1 {
-  /* Fires 1 */
-  top: 0;
-  left: 0;
-  z-index: 3;
-  transform: rotate(-5deg);
-}
-
-.image2 {
-  /* Fires 2 */
-  top: 50px;
-  left: 25%;
-  z-index: 2;
-  transform: rotate(3deg);
-}
-
-.image3 {
-  /* Solicituds 1 */
-  top: 150px;
-  left: 10%;
-  z-index: 1;
-  transform: rotate(-2deg);
+.featureImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .featureContent {
-    flex-direction: column;
-    gap: 3rem;
-    text-align: center;
-  }
-  .imagesBlock {
-    min-height: 350px;
-    width: 100%;
-    margin-top: 2rem;
-  }
-  .featureImage {
-    max-width: 60%;
-  }
-  .image1 {
-    left: 5%;
-  }
-  .image2 {
-    left: 35%;
-  }
-  .image3 {
-    top: 130px;
-    left: 20%;
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .mainTitle {
     font-size: 2rem;
+    margin-bottom: 2.5rem;
   }
-  .imagesBlock {
-    min-height: 300px;
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  .featureImage {
-    max-width: 70%;
+
+  .featureCard {
+    max-width: 400px;
+    margin: 0 auto;
   }
-  .image1 {
-    left: 0;
-    top: 0;
-  }
-  .image2 {
-    left: 30%;
-    top: 40px;
-  }
-  .image3 {
-    top: 110px;
-    left: 15%;
+
+  .featureTitle {
+    font-size: 1.25rem;
   }
 }

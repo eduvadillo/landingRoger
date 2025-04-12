@@ -1,18 +1,68 @@
 .waitlistSection {
-  background-color: #111111; /* Fondo oscuro */
   padding: 5rem 0;
   color: #ffffff;
 }
 
 .container {
-  max-width: 800px; /* Más estrecho para el formulario */
+  max-width: 1100px; /* Wider to accommodate side by side layout */
   margin: 0 auto;
   padding: 0 1.5rem;
-  text-align: center;
 }
 
-.header {
-  margin-bottom: 3rem;
+.waitlistTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* New two-column layout */
+.contentWrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.textContent {
+  flex: 1;
+  text-align: left; /* Left-alçign the text content */
+}
+
+.inputError {
+  border-color: #e53e3e;
+}
+
+.errorMessage {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.privacyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.privacyLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.privacyCheckbox {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.privacyError {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  /*  margin-left: 1.75rem; */
+  display: block;
+  font-weight: 500;
 }
 
 .title {
@@ -33,33 +83,25 @@
 .description {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 1rem; /* 16px */
+  font-size: 1.2rem; /* 16px */
   color: #b0b0b0;
   line-height: 1.6;
-  max-width: 650px;
-  margin: 0 auto;
 }
 
 .form {
+  flex: 1;
   background-color: #1f1f1f; /* Fondo del form */
   padding: 2.5rem;
   border-radius: 16px;
   text-align: left;
 }
 
-.formRow {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .formGroup {
-  flex: 1;
   margin-bottom: 1.5rem;
 }
 
-.formGroup:last-child {
-  margin-bottom: 0; /* Evitar doble margen */
+.formGroup:last-of-type {
+  margin-bottom: 2rem; /* Space before the checkbox */
 }
 
 .label {
@@ -116,9 +158,15 @@
 /* Estilos para el Checkbox */
 .formGroupCheckbox {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.checkboxWrapper {
+  display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 2rem;
 }
 
 .checkbox {
@@ -158,6 +206,10 @@
   cursor: pointer;
 }
 
+.privatPolicy {
+  text-decoration: underline;
+}
+
 .submitButton {
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -170,29 +222,82 @@
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 1rem; /* Espacio antes del botón */
 }
 
-.submitButton:hover {
+.submitButton:hover:not(.submitButtonDisabled) {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(159, 103, 255, 0.4);
 }
 
+.submitButton:disabled {
+  background: linear-gradient(to right, #9f67ff80, #6a28fc80);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submitButtonDisabled {
+  background: linear-gradient(to right, #9f67ff80, #6a28fc80);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.formMessage {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.success {
+  background-color: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  color: #2ecc71;
+}
+
+.error {
+  background-color: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  color: #e74c3c;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+.inputError {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 0 1px rgba(255, 77, 77, 0.2);
+}
+
 /* Responsive */
+@media (max-width: 992px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .textContent {
+    text-align: center;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
   }
   .subtitle {
     font-size: 1.25rem;
-  }
-  .formRow {
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
-  }
-  .formGroup {
-    margin-bottom: 1.5rem; /* Restaurar margen inferior en columna */
   }
   .form {
     padding: 1.5rem;

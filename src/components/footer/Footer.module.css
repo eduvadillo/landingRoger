@@ -7,6 +7,7 @@
 .container {
   margin: 0 auto;
   padding: 0 1.5rem;
+  max-width: 1200px;
 }
 
 .divider {
@@ -24,8 +25,12 @@
   gap: 1rem;
 }
 
+.social {
+  display: flex;
+}
+
 .logo {
-  height: 1.5rem; /* Ajustar según sea necesario */
+  height: 1.1rem; /* Ajustar según sea necesario */
   width: auto;
 }
 
@@ -48,6 +53,11 @@
 
 .socialLink:hover {
   color: #9f67ff; /* Color de acento al hacer hover */
+}
+
+.separation {
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 /* Responsive */

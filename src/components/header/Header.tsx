@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Header.module.css";
-import logoHeader from "../../assets/logo-header.svg";
+import fira from "../../assets/logo.png";
 
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <img src={logoHeader} alt='Firal Logo' className={styles.logo} />
+        <img src={fira} alt='Firal Logo' className={styles.logo} />
         <nav>
           <a href='#' className={styles.loginLink}>
             Login
