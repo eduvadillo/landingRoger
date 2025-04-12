@@ -147,4 +147,12 @@
   .dashboardOverlay {
     height: 150px; /* Reducir tamaño en móviles */
   }
+
+  .dashboardImage {
+    border-radius: 10px;
+  }
+
+  .dashboardWrapper {
+    border-radius: 10px;
+  }
 }

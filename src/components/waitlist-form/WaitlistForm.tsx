@@ -130,7 +130,7 @@ export const WaitlistForm: React.FC = () => {
         <div className={styles.contentWrapper}>
           <div className={styles.textContent}>
             <p className={styles.description}>
-              {`Apunta't a la llista i sigues el primer en saber quan firal.app estigui disponible.
+              {`Apunta't a la llista i sigues el primer en saber quan firal.cat estigui disponible.
               Tindràs accés prioritari a la versió beta i l'oportunitat de provar l'eina abans del llançament oficial.
               A més, podràs fer-nos arribar els teus comentaris i ajudar-nos a construir una plataforma realment útil per a paradistes com tu.
               Ens ajudes?`}

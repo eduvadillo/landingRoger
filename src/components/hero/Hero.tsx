@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import backgroundImage from "../../assets/background.png";
+import backgroundImage from "../../assets/background2.webp";
 import dashboardImage from "../../assets/dashboardLanding.webp";
 
 export const Hero: React.FC = () => {
