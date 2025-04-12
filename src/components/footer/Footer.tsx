@@ -11,16 +11,12 @@ export const Footer: React.FC = () => {
         <div className={styles.content}>
           <img src={fira} alt='Firal Logo' className={styles.logo} />
           <div className={styles.social}>
-            {/* The Figma data shows text "Instagram" (430:5647) */}
-            {/* If an icon is preferred, it needs to be added/downloaded */}
-            <a
-              href='#' /* Replace with actual Instagram link */
+            <button
               className={styles.socialLink}
-              target='_blank'
-              rel='noopener noreferrer'
+              onClick={() => window.open("https://www.instagram.com/firal.app", "_blank")}
             >
               Instagram
-            </a>
+            </button>
             <span className={styles.separation}>|</span>
             <p className={styles.copyright}>Firal 2025 ©</p>
           </div>

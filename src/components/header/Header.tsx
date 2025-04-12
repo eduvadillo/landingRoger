@@ -8,9 +8,7 @@ export const Header: React.FC = () => {
       <div className={styles.container}>
         <img src={fira} alt='Firal Logo' className={styles.logo} />
         <nav>
-          <a href='#' className={styles.loginLink}>
-            Login
-          </a>
+          <button className={styles.loginLink}>Login</button>
         </nav>
       </div>
     </header>
