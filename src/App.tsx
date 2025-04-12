@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./App.module.css";
 import { Header } from "./components/header/Header";
 import { Hero } from "./components/hero/Hero";
-import { ProblemSection } from "./components/problem-section/ProblemSection";
-import { SolutionSection } from "./components/solution-section/SolutionSection";
+import { ChallengesSolutions } from "./components/challenges-solutions/ChallengesSolutions";
 import { FeaturesSection } from "./components/features-section/FeaturesSection";
 import { WaitlistForm } from "./components/waitlist-form/WaitlistForm";
 import { Footer } from "./components/footer/Footer";
@@ -14,8 +13,7 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Hero />
-        <ProblemSection />
-        <SolutionSection />
+        <ChallengesSolutions />
         <FeaturesSection />
         <WaitlistForm />
       </main>
